@@ -139,24 +139,44 @@
     & .content .year {
       @apply text-gray-100 font-medium text-base;
     }
+
+    /* Thêm hiệu ứng bounce khi hover */
+    & img:hover {
+      animation: bounce 0.5s ease-in-out;
+    }
   }
 }
 
-@utility text-gradient {
-  @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
-}
+@layer utilities {
+  /* Định nghĩa keyframes cho hiệu ứng bounce */
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
 
-@utility fancy-text {
-  -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
-  font-size: 190px;
-  font-family: "Bebas Neue", sans-serif;
-}
+  @utility text-gradient {
+    @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
+  }
 
-@utility hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  @utility fancy-text {
+    -webkit-text-stroke: 5px rgba(206, 206, 251, 0.5);
+    font-size: 190px;
+    font-family: "Bebas Neue", sans-serif;
+  }
 
-  &::-webkit-scrollbar {
-    display: none;
+  @utility hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
