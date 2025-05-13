@@ -19,11 +19,11 @@ const API_OPTIONS = {
 const App = () => {
   const [debounceSearchTerm, setDebounceSearchTerm] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  
+
   const [movieList, setMovieList] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  
+
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   // Debounce the search term to prevent making too many API requests
@@ -92,17 +92,17 @@ const App = () => {
         <header>
           <img src='./hero.png' alt='Hero Banner' />
           <h1>
-            Find <span className='text-gradient'> Movies</span> You'll Enjoy
-            Without the Hassle
+            Discover <span className='text-gradient'>Movies</span> You’ll Love,
+            Effortlessly!
           </h1>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <h1 className='text-white'>{searchTerm}</h1>
         </header>
 
         {trendingMovies.length > 0 && (
-          <section className="trending">  
+          <section className='trending'>
             <h2>Trending Movies</h2>
-            
+
             <ul>
               {trendingMovies.map((movie, index) => (
                 <li key={movie.$id}>

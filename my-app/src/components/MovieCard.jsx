@@ -5,7 +5,7 @@ const MovieCard = ({
 }) => {
   return (
     <div className='movie-card'>
-      <img
+      <img 
         src={
           poster_path
             ? `https://image.tmdb.org/t/p/w500/${poster_path}`
